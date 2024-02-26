@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is running the first workflow action like a boss
 on: [push]
 
 jobs:
-    First-Workflow:
+    first-job:
       runs-on: ubuntu-latest
       steps:
         - name: echo a string
@@ -12,3 +12,16 @@ jobs:
           run: |
             node -v
             npm -v
+    parallel-jobs-macos:
+      runs-on: macos-latest
+      steps:
+        - name: view sw version
+          run: sw_vers
+    dependent-job:
+      runs-on: windows-latest
+      needs: first-job
+      steps:
+        - name: echo a string
+          run: Write-Output "Windows String"
+        - name: error step
+          run: thiscommanddoesnotexist
