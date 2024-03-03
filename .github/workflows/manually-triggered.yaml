@@ -12,7 +12,7 @@ on:
                 default: 4
                 type: number
             option:
-                description: "An Options Input"
+                description: "An options input"
                 required: true
                 default: "Option 3"
                 type: choice
@@ -25,7 +25,7 @@ on:
                 required: false
                 type: boolean
             environment:
-                description: "Environment"
+                description: "environment"
                 type: environment
                 required: true
 
